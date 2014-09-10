@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Docking\IQuickAuth.cs" />
+    <Compile Include="Docking\IUserAuth.cs" />
     <Compile Include="Entities\BaseError.cs" />
     <Compile Include="Entities\ErrorCode.cs" />
     <Compile Include="Entities\Qzone\QzoneAccessTokenInteractive.cs" />
