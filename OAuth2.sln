@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2.Test", "OAuth2.Test\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2.Example.Test", "OAuth2.Example.Test\OAuth2.Example.Test.csproj", "{E30DEF1F-954A-437A-9725-95F731F88260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliPay.Authorization", "AliPay.Authorization\AliPay.Authorization.csproj", "{F377BAA3-6C84-4559-9F0E-84CCA35EE849}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2.AliPay", "AliPay.Authorization\OAuth2.AliPay.csproj", "{F377BAA3-6C84-4559-9F0E-84CCA35EE849}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -121,9 +121,9 @@
     <Compile Include="WeiXin\WxOAuthHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AliPay.Authorization\AliPay.Authorization.csproj">
+    <ProjectReference Include="..\AliPay.Authorization\OAuth2.AliPay.csproj">
       <Project>{f377baa3-6c84-4559-9f0e-84cca35ee849}</Project>
-      <Name>AliPay.Authorization</Name>
+      <Name>OAuth2.AliPay</Name>
     </ProjectReference>
     <ProjectReference Include="..\OAuth2\OAuth2.csproj">
       <Project>{88f4d4f7-7e88-4923-8e71-f50bd16ababd}</Project>
