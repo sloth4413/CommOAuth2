@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Handlers.cs" />
+    <Compile Include="ErrorMechanism.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OAuth2.Example.Test\OAuth2.Example.Test.csproj">

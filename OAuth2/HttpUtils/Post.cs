@@ -20,15 +20,17 @@ namespace OAuth2.HttpUtils
         /// <param name="converter"></param>
         /// <returns></returns>
         public static TResponse GetResult<TResponse,TError>(string returnText,IJsonConverter converter=null)
-            where TError:BaseError
+            where TError:BaseError<TError>,new()
         {
             JavaScriptSerializer js = new JavaScriptSerializer();
 
-            if (returnText.Contains("errcode"))
+            TError errorEng = new TError();
+            if (errorEng.Has(returnText))
             {
                 //if (converter != null) returnText = converter.Convert(returnText);
                 //可能发生错误
-                TError errorResult = js.Deserialize<TError>(returnText);
+                //TError errorResult = js.Deserialize<TError>(returnText);
+                TError errorResult = errorEng.ToJson(returnText);
                 if (!errorResult.IsSuccess())
                 {
                     //发生错误
@@ -49,7 +51,7 @@ namespace OAuth2.HttpUtils
         /// <param name="cookieContainer">CookieContainer，如果不需要则设为null</param>
         /// <returns></returns>
         public static TResponse PostFileGetJson<TResponse, TError>(string url, CookieContainer cookieContainer = null, Dictionary<string, string> fileDictionary = null, Encoding encoding = null, IJsonConverter converter = null)
-        where TError:BaseError
+        where TError:BaseError<TError>,new()
         {
             string returnText = RequestUtility.HttpPost(url, cookieContainer, null, fileDictionary, null, encoding);
             var result = GetResult<TResponse,TError>(returnText,converter);
@@ -67,7 +69,7 @@ namespace OAuth2.HttpUtils
         /// <param name="encoding"></param>
         /// <returns></returns>
         public static TResponse PostGetJson<TResponse, TError>(string absoluteUri, string url, CookieContainer cookieContainer = null, Stream fileStream = null, Encoding encoding = null, IJsonConverter converter = null)
-        where TError:BaseError
+        where TError:BaseError<TError>,new()
         {
             string returnText = RequestUtility.HttpPost(url, cookieContainer, fileStream, null, null, encoding);
             var result = GetResult<TResponse,TError>(returnText,converter);
@@ -75,7 +77,7 @@ namespace OAuth2.HttpUtils
         }
 
         public static TResponse PostGetJson<TResponse,TError>(string url, CookieContainer cookieContainer = null, Dictionary<string, string> formData = null, Encoding encoding = null,IJsonConverter converter= null)
-        where TError:BaseError
+        where TError:BaseError<TError>,new()
         {
             string returnText = RequestUtility.HttpPost(url, cookieContainer, formData, encoding);
             var result = GetResult<TResponse,TError>(returnText,converter);

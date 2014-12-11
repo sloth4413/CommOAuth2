@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using OAuth2.Entities;
 
 namespace OAuth2.HttpUtils
 {
     public interface IHttpSupplier
     {
-        TResponse Get<TResponse,TError>(Uri uri,IJsonConverter converter=null) where TError:BaseError;
+        TResponse Get<TResponse,TError>(Uri uri,IJsonConverter converter=null) where TError:BaseError<TError>,new();
 
-        TResponse Post<TResponse,TError>(Uri uri,IJsonConverter converter=null) where  TError:BaseError;
+        TResponse Post<TResponse,TError>(Uri uri,IJsonConverter converter=null) where  TError:BaseError<TError>,new();
     }
 
     public class HttpSuppplier:IHttpSupplier

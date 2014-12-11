@@ -11,16 +11,16 @@ namespace OAuth2.HttpUtils
     public static class Get
     {
         public static TResponse GetJson<TResponse,TError>(string url, Encoding encoding = null,IJsonConverter converter=null) 
-            where TError:BaseError
+            where TError:BaseError<TError>,new()
         {
             string returnText = RequestUtility.HttpGet(url, encoding);
 
             JavaScriptSerializer js = new JavaScriptSerializer();
-
-            if (returnText.Contains("errcode"))
+            TError  errorEng = new TError();
+            if (errorEng.Has(returnText))
             {
                 //可能发生错误
-                TError errorResult = js.Deserialize<TError>(returnText);
+                TError errorResult = errorEng.ToJson(returnText);//js.Deserialize<TError>(returnText);
                 if (!errorResult.IsSuccess())
                 {
                     //发生错误

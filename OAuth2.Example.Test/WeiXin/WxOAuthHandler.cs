@@ -18,8 +18,8 @@ namespace OAuth2.Example.Test.WeiXin
 
             var session = sessionBuilder.Build(new WxRequestResSetting("http://weixinchat.ngrok.com/Response.aspx", context.Code)
             {
-                AppId = "AppId",
-                AppSecret = "AppSecret"
+                AppId = "wx62f0026ea2c556fd",
+                AppSecret = "67c71c8d7edeb6637a9b3ee2c54cf28e"
             });
 
             var userInfo = session.Request<WxUserInfoResult>(new Uri(session.RequestUserInfoPtl()));

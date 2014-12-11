@@ -28,9 +28,9 @@ namespace OAuth2.Sina
             {
                 return HttpSupplier.Get<TRes, SinaErrorResult>(uri);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return default(TRes);
+                throw ex;
             }
         }
 
