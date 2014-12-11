@@ -21,7 +21,7 @@ namespace OAuth2.Example.Test
             WxAuthenticationSessionBuilder  sessionBuilder = new WxAuthenticationSessionBuilder();
 
             //传递给认证服务器的协议参数,具体http://mp.weixin.qq.com/wiki/index.php?title=网页授权获取用户基本信息
-            var setting = new WxRequestAuthSetting("http://weixinchat.ngrok.com/Response.aspx", new List<string>() { WxScope.snsapi_userinfo.ToString() }) { AppId = "wx62f0026ea2c556fd" };
+            var setting = new WxRequestAuthSetting("http://weixinchat.ngrok.com/Response.aspx", new List<string>() { WxScope.snsapi_userinfo.ToString() }) { AppId = "AppId" };
 
             //因为该事例采用server-side方式来认证,所以直接引导用户到提供商认证服务器的页面处理器上去
             var wxAuthenticationSession = sessionBuilder.Build(setting);

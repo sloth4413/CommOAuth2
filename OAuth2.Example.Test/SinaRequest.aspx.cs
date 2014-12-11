@@ -17,7 +17,7 @@ namespace OAuth2.Example.Test
             SinaAuthenticationSessionBuilder sessionBuilder = new SinaAuthenticationSessionBuilder();
 
             //传递给认证服务器的协议参数,具体http://mp.weixin.qq.com/wiki/index.php?title=网页授权获取用户基本信息
-            var setting = new SinaRequestAuthSetting("http://weixinchat.ngrok.com/Response.aspx", "2807558453", new List<string>() { SinaScope.all.ToString() });
+            var setting = new SinaRequestAuthSetting("http://weixinchat.ngrok.com/Response.aspx", "AppId", new List<string>() { SinaScope.all.ToString() });
 
             //因为该事例采用server-side方式来认证,所以直接引导用户到提供商认证服务器的页面处理器上去
             var wxAuthenticationSession = sessionBuilder.Build(setting);

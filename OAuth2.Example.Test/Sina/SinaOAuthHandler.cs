@@ -20,8 +20,8 @@ namespace OAuth2.Example.Test.Sina
 
             var session = sessionBuilder.Build(new SinaRequestResSetting("http://weixinchat.ngrok.com/Response.aspx", context.Code)
             {
-                ClientId = "2807558453",
-                ClientSecret = "4568a75593978efe7f1fcf5d3c7fb658"
+                ClientId = "AppId",
+                ClientSecret = "AppSecret"
             });
 
             var userInfo = session.Request<SinaUserInfoResult>(new Uri(session.RequestUserInfoPtl()));
