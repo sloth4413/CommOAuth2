@@ -30,8 +30,6 @@
 
 5.修改Scope实现 OK
 
-6.引入配置文件管理
+6.完善Web Example
 
-7.完善Web Example
-
-8.支付Http模拟验证
+7.支付Http模拟验证

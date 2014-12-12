@@ -99,7 +99,6 @@
     <Compile Include="WeiXin\WxResourceSession.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Configuration\" />
     <Folder Include="Taobao\" />
   </ItemGroup>
   <ItemGroup>
